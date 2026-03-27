@@ -1,6 +1,8 @@
 package com.TODO.TODOAPP.model;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "Task")
 public class Task {
@@ -13,16 +15,16 @@ public class Task {
     private String titulo;
 
     @Column(name = "descrição")
-    private String descrição;
+    private String descricao;
 
     @Column(name = "status_atual")
     private boolean status_atual;
 
     @Column(name = "data_limite")
-    private String data_limite;
+    private LocalDate data_limite;
 
     @Column(name = "data_inicio")
-    private String data_inicio;
+    private LocalDate data_inicio;
 
 
 
