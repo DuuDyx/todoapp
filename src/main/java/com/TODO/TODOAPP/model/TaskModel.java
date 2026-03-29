@@ -1,17 +1,41 @@
-package com.TODO.TODOAPP.controller;
+package com.TODO.TODOAPP.model;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-public class TaskDTO {
+@Entity
+@Table(name = "Task")
+public class TaskModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "titulo")
     private String titulo;
+
+    @Column(name = "descrição")
     private String descricao;
+
+    @Column(name = "status_atual")
     private boolean status_atual;
+
+    @Column(name = "data_limite")
     private LocalDate data_limite;
+
+    @Column(name = "data_inicio")
     private LocalDate data_inicio;
 
-    public TaskDTO() {
+    public TaskModel(){}
+
+    public TaskModel(Long id, String titulo, String descricao, boolean status_atual, LocalDate data_limite, LocalDate data_inicio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.status_atual = status_atual;
+        this.data_limite = data_limite;
+        this.data_inicio = data_inicio;
     }
+
 
     public Long getId() {
         return id;
